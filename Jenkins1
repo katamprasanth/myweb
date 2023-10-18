@@ -4,7 +4,7 @@ pipeline{
   environment{
       PATH= "/opt/maven3/bin:$PATH"
 }
-stages{
+stage{
   stages("Git Checkout"){
             steps{
                 git credentialsId: 'Prasanth', url: 'https://github.com/katamprasanth/myweb.git'
