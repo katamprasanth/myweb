@@ -20,9 +20,9 @@ stage("deploy-dev"){
     steps{
           sshagent(['Prashu']){
           sh """
-            scp -o StrictHostKeyChecking=no target/myweb.war ec2-user@172-31-31-142:/home/ec2-user/apache-tomcat-9.0.82/webapps/
-            ssh ec2-user@172-31-31-142 /home/ec2-user/apache-tomcat-9.0.82/bin/shutdown.sh
-            ssh ec2-user@172-31-31-142 /home/ec2-user/apache-tomcat-9.0.82/bin/startup.sh
+            scp -o StrictHostKeyChecking=no target/myweb.war ec2-user@172.31.31.142:/home/ec2-user/apache-tomcat-9.0.82/webapps/
+            ssh ec2-user@172.31.31.142 /home/ec2-user/apache-tomcat-9.0.82/bin/shutdown.sh
+            ssh ec2-user@172.31.31.142 /home/ec2-user/apache-tomcat-9.0.82/bin/startup.sh
               """
             }
       }
